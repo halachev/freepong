@@ -1,0 +1,106 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Progress\"><param name=\"ios-package\" value=\"Progress\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AdMob\"><param name=\"ios-package\" value=\"CDVAdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSAppTransportSecurity": [
+                        {
+                            "xml": "<dict><key>NSAllowsArbitraryLoads</key><true /></dict>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.free.pong"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.free.pong"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.free.pong"
+        },
+        "cordova-plugin-progress": {
+            "PACKAGE_NAME": "com.free.pong"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.free.pong"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.free.pong"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "id": "cordova-plugin-vibration.notification",
+            "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+            "pluginId": "cordova-plugin-vibration",
+            "merges": [
+                "navigator.notification",
+                "navigator"
+            ]
+        },
+        {
+            "id": "cordova-plugin-progress.Progress",
+            "file": "plugins/cordova-plugin-progress/www/progress.js",
+            "pluginId": "cordova-plugin-progress",
+            "clobbers": [
+                "progress"
+            ]
+        },
+        {
+            "id": "cordova-plugin-admobpro.AdMob",
+            "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+            "pluginId": "cordova-plugin-admobpro",
+            "clobbers": [
+                "window.AdMob"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.3.1",
+        "cordova-plugin-splashscreen": "4.0.1",
+        "cordova-plugin-vibration": "2.1.3",
+        "cordova-plugin-progress": "0.3.0",
+        "cordova-plugin-extension": "1.5.1",
+        "cordova-plugin-admobpro": "2.26.0"
+    }
+}
